@@ -4,7 +4,7 @@
 class Hash
   class << self
     # @param old [Hash]
-    # @param old [Hash]
+    # @param new [Hash]
     # @return [Hash::Diff]
     def Diff(old, new)
       Diff.new(old: old, new: new)
