@@ -12,6 +12,8 @@ class Hash
   end
 
   class Diff
+    VERSION = '0.1.0'.freeze
+
     attr_reader :old, :new
 
     # @note Don't care given hash might be changed in future, to keep lite cost
