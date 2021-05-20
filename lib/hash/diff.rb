@@ -65,11 +65,16 @@ class Hash
 
     # @return [Hash]
     def extract_keys(base, extracting)
-      ret = base.dup
-      extracting.each_key do |key|
-        ret.delete key
+      # We can drop this condition after dropped to support Ruby 2.7.x in future...
+      if base.respond_to?(:except)
+        base.except(*extracting.keys)
+      else
+        ret = base.dup
+        extracting.each_key do |key|
+          ret.delete key
+        end
+        ret
       end
-      ret
     end
   end
 end
