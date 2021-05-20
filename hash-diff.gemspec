@@ -1,6 +1,7 @@
 # coding: us-ascii
+# frozen_string_literal: true
 
-lib_name = 'hash-diff'.freeze
+lib_name = 'hash-diff'
 
 Gem::Specification.new do |gem|
   # specific
@@ -13,23 +14,27 @@ Gem::Specification.new do |gem|
   gem.name          = lib_name.dup
   gem.version       = '0.1.0'
 
-  gem.required_ruby_version = '>= 2.1'
+  gem.required_ruby_version = '>= 2.5'
 
-  gem.add_development_dependency 'rspec', '>= 3.3', '< 4'
-  gem.add_development_dependency 'yard', '>= 0.9.9', '< 2'
-  gem.add_development_dependency 'rake', '>= 10', '< 20'
-  gem.add_development_dependency 'bundler', '>= 1.10', '< 2'
-
-  if RUBY_ENGINE == 'rbx'
-    gem.add_dependency 'rubysl', '>= 2.2'
-  end
+  gem.add_development_dependency 'rspec', '>= 3.10.0', '< 4.0'
+  gem.add_development_dependency 'yard', '>= 0.9.26', '< 2'
+  gem.add_development_dependency 'rake', '>= 13.0.3', '< 20.0'
+  gem.add_development_dependency 'warning', '>= 1.2.0', '< 2.0'
+  gem.add_development_dependency 'rubocop', '>= 1.14.0', '< 1.15.0'
+  gem.add_development_dependency 'rubocop-rake'
+  gem.add_development_dependency 'rubocop-performance'
+  gem.add_development_dependency 'rubocop-rubycw'
+  gem.add_development_dependency 'rubocop-rspec'
 
   # common
 
   gem.authors       = ['Kenichi Kamiya']
   gem.email         = ['kachick1+ruby@gmail.com']
-  gem.files         = `git ls-files`.split($\)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  git_ls_filepaths = `git ls-files`.lines.map(&:chomp)
+  minimum_filepaths = git_ls_filepaths.grep(%r!\A(?:lib|sig)/!)
+  raise "obvious mistaken in packaging files: #{minimum_filepaths.inspect}" if minimum_filepaths.size < 1
+  extra_filepaths = %w[README.md MIT-LICENSE]
+  raise 'git ignores extra filename' unless (extra_filepaths - git_ls_filepaths).empty?
+  gem.files         = minimum_filepaths | extra_filepaths
   gem.require_paths = ['lib']
 end
