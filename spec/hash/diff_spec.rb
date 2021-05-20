@@ -9,6 +9,13 @@ RSpec.describe Hash::Diff do
 
   let!(:diff) { Hash.Diff old, new }
 
+  describe Hash::Diff::VERSION do
+    subject { Hash::Diff::VERSION }
+
+    it { is_expected.to be_frozen }
+    it { expect(Gem::Version.correct?(subject)).to eq(true) }
+  end
+
   describe '#updated' do
     it { expect(diff.updated).to eq(a: 1, c: 2, d: 2, x: 7) }
   end
