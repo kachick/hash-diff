@@ -3,6 +3,8 @@
 
 lib_name = 'hash-diff'
 
+require_relative './lib/hash/diff/version'
+
 Gem::Specification.new do |gem|
   # specific
 
@@ -12,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://github.com/kachick/#{lib_name}"
   gem.license       = 'MIT'
   gem.name          = lib_name.dup
-  gem.version       = '0.1.0'
+  gem.version       = Hash::Diff::VERSION
 
   gem.required_ruby_version = '>= 2.5'
 

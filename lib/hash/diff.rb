@@ -13,8 +13,6 @@ class Hash
   end
 
   class Diff
-    VERSION = '0.1.0'
-
     attr_reader :old, :new
 
     # @note Don't care given hash might be changed in future, to keep lite cost
@@ -78,3 +76,5 @@ class Hash
     end
   end
 end
+
+require_relative 'diff/version'
