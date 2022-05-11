@@ -16,6 +16,10 @@ Gem::Specification.new do |gem|
   gem.name          = lib_name.dup
   gem.version       = Hash::Diff::VERSION
 
+  gem.metadata = {
+    'rubygems_mfa_required' => 'true'
+  }
+
   gem.required_ruby_version = '>= 3.0'
 
   # common
