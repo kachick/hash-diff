@@ -16,17 +16,11 @@ Gem::Specification.new do |gem|
   gem.name          = lib_name.dup
   gem.version       = Hash::Diff::VERSION
 
-  gem.required_ruby_version = '>= 2.5'
+  gem.metadata = {
+    'rubygems_mfa_required' => 'true'
+  }
 
-  gem.add_development_dependency 'rspec', '>= 3.10.0', '< 4.0'
-  gem.add_development_dependency 'yard', '>= 0.9.26', '< 2'
-  gem.add_development_dependency 'rake', '>= 13.0.3', '< 20.0'
-  gem.add_development_dependency 'warning', '>= 1.2.0', '< 2.0'
-  gem.add_development_dependency 'rubocop', '>= 1.14.0', '< 1.15.0'
-  gem.add_development_dependency 'rubocop-rake'
-  gem.add_development_dependency 'rubocop-performance'
-  gem.add_development_dependency 'rubocop-rubycw'
-  gem.add_development_dependency 'rubocop-rspec'
+  gem.required_ruby_version = '>= 3.0'
 
   # common
 

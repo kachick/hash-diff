@@ -12,7 +12,7 @@ Get difference in 2 Hash
 Usage
 -----
 
-Require Ruby 2.5 or later
+Require Ruby 3.0 or later
 
 ```console
 $ gem install hash-diff
