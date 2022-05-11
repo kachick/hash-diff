@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.name          = lib_name.dup
   gem.version       = Hash::Diff::VERSION
 
-  gem.required_ruby_version = '>= 2.5'
+  gem.required_ruby_version = '>= 3.0'
 
   gem.add_development_dependency 'rspec', '>= 3.10.0', '< 4.0'
   gem.add_development_dependency 'yard', '>= 0.9.26', '< 2'
