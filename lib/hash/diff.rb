@@ -38,6 +38,7 @@ class Hash
         ((old_pairs - new_pairs) | (new_pairs - old_pairs)).to_h
       )
     end
+    alias_method :changed, :updated
 
     # @return [Hash]
     def value_updated
@@ -56,7 +57,7 @@ class Hash
 
     # @return [String]
     def inspect
-      "old: #{@old.inspect} / new: #{@new.inspect}"
+      "#{self.class}<changed: #{changed.inspect}>"
     end
 
     private
