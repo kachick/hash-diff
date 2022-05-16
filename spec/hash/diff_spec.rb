@@ -20,6 +20,10 @@ RSpec.describe Hash::Diff do
     it { expect(diff.updated).to eq(a: 1, c: 2, d: 2, x: 7) }
   end
 
+  describe '#changed' do
+    it { expect(diff.changed).to eq(a: 1, c: 2, d: 2, x: 7) }
+  end
+
   describe '#deleted' do
     it { expect(diff.deleted).to eq(c: 2) }
   end
@@ -37,6 +41,8 @@ RSpec.describe Hash::Diff do
   end
 
   describe '#inspect' do
-    it { expect(diff.inspect).to be_an_instance_of(String) }
+    subject { diff.inspect }
+    it { is_expected.to be_an_instance_of(String) }
+    it { is_expected.to eq('Hash::Diff<changed: {:a=>1, :c=>2, :d=>2, :x=>7}>') }
   end
 end

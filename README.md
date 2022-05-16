@@ -1,24 +1,11 @@
-hash-diff
-===========
+# hash-diff
 
 ![Build Status](https://github.com/kachick/hash-diff/actions/workflows/spec.yml/badge.svg?branch=main)
-[![Gem Version](https://badge.fury.io/rb/hash-diff.png)](http://badge.fury.io/rb/hash-diff)
+[![Gem Version](https://badge.fury.io/rb/hash-diff.svg)](http://badge.fury.io/rb/hash-diff)
 
-Description
------------
+## Usage
 
 Get difference in 2 Hash
-
-Usage
------
-
-Require Ruby 3.0 or later
-
-```console
-$ gem install hash-diff
-Latest version will be installed!
-```
-
 
 ```ruby
 require 'hash/diff'
@@ -34,9 +21,7 @@ diff.kept #=> {:kept=>:same}
 diff.value_updated #=> {:updated=>:hi}
 ```
 
-License
---------
+## Links
 
-The MIT X11 License  
-Copyright (c) 2017 Kenichi Kamiya  
-See MIT-LICENSE for further details.
+* [Repository](https://github.com/kachick/hash-diff)
+* [API documents](https://kachick.github.io/hash-diff/)
