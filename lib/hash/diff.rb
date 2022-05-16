@@ -22,12 +22,12 @@ class Hash
 
     # @return [Hash]
     def deleted
-      @deleted ||= extract_keys(updated, @new)
+      @deleted ||= updated.except(*@new.keys)
     end
 
     # @return [Hash]
     def appended
-      @appended ||= extract_keys(updated, @old)
+      @appended ||= updated.except(*@old.keys)
     end
 
     # @return [Hash]
@@ -42,29 +42,17 @@ class Hash
 
     # @return [Hash]
     def value_updated
-      @value_updated ||= (
-        extract_keys(
-          extract_keys(updated, deleted),
-          appended
-        )
-      )
+      @value_updated ||= updated.except(*deleted.keys).except(*appended.keys)
     end
 
     # @return [Hash]
     def kept
-      @kept ||= extract_keys(@new, updated)
+      @kept ||= @new.except(*updated.keys)
     end
 
     # @return [String]
     def inspect
       "#{self.class}<changed: #{changed.inspect}>"
-    end
-
-    private
-
-    # @return [Hash]
-    def extract_keys(base, extracting)
-      base.except(*extracting.keys)
     end
   end
 end
