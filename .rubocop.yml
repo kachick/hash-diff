@@ -2,7 +2,7 @@ require:
   - rubocop-rake
   - rubocop-performance
   - rubocop-rubycw
-  - rubocop-rspec
+  - rubocop-thread_safety
 
 AllCops:
   TargetRubyVersion: 3.0
