@@ -35,6 +35,9 @@ Style/StringLiteralsInInterpolation:
   Enabled: true
   EnforcedStyle: 'single_quotes'
 
+Style/TopLevelMethodDefinition:
+  Enabled: true
+
 Style/FrozenStringLiteralComment:
   Enabled: true
 
