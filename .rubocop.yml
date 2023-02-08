@@ -1,7 +1,6 @@
 require:
   - rubocop-rake
   - rubocop-performance
-  - rubocop-rubycw
   - rubocop-thread_safety
 
 AllCops:
@@ -11,6 +10,7 @@ AllCops:
   Exclude:
     - '**/vendor/**/*'
   NewCops: enable
+  SuggestExtensions: false
 
 Security:
   Enabled: true
@@ -137,7 +137,4 @@ Lint/RescueException:
   Enabled: false
 
 Lint/DuplicateMethods:
-  Enabled: true
-
-Rubycw/Rubycw:
   Enabled: true
