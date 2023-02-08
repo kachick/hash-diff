@@ -14,7 +14,7 @@ old = { updated: :bye, kept: :same, deleted: :bye }
 new = { updated: :hi,  kept: :same, appended: :hi }
 
 diff = Hash::Diff old, new
-diff.updated #=> {:updated=>:hi, :deleted=>:bye, :appended=>:hi}
+diff.dirty #=> {:updated=>:hi, :deleted=>:bye, :appended=>:hi}
 diff.deleted #=> {:deleted=>:bye}
 diff.appended #=> {:appended=>:hi}
 diff.kept #=> {:kept=>:same}

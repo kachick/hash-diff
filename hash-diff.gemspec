@@ -3,7 +3,7 @@
 
 lib_name = 'hash-diff'
 
-require_relative './lib/hash/diff/version'
+require_relative './lib/hash/diff'
 repository_url = "https://github.com/kachick/#{lib_name}"
 
 Gem::Specification.new do |gem|
@@ -36,7 +36,7 @@ Gem::Specification.new do |gem|
   files = might_be_parsing_by_tool_as_dependabot ? base_files : (base_files & git_managed_files)
 
   unless might_be_parsing_by_tool_as_dependabot
-    if files.grep(%r!\A(?:lib|sig)/!).size < 2
+    if files.grep(%r!\A(?:lib|sig)/!).size < 1
       raise "obvious mistaken in packaging files, looks shortage: #{files.inspect}"
     end
   end

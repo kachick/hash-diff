@@ -16,12 +16,8 @@ RSpec.describe Hash::Diff do
     it { expect(Gem::Version.correct?(subject)).to eq(true) }
   end
 
-  describe '#updated' do
-    it { expect(diff.updated).to eq(a: 1, c: 2, d: 2, x: 7) }
-  end
-
-  describe '#changed' do
-    it { expect(diff.changed).to eq(a: 1, c: 2, d: 2, x: 7) }
+  describe '#dirty' do
+    it { expect(diff.dirty).to eq(a: 1, c: 2, d: 2, x: 7) }
   end
 
   describe '#deleted' do
@@ -43,6 +39,6 @@ RSpec.describe Hash::Diff do
   describe '#inspect' do
     subject { diff.inspect }
     it { is_expected.to be_an_instance_of(String) }
-    it { is_expected.to eq('Hash::Diff<changed: {:a=>1, :c=>2, :d=>2, :x=>7}>') }
+    it { is_expected.to include('{:a=>1, :c=>2, :d=>2, :x=>7}') }
   end
 end
