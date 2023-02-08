@@ -1,7 +1,9 @@
 # hash-diff
 
+- _**This project now exists for very personal use**_.
+- _**All versions have been removed from https://rubygems.org to free up valuable namespace for other developers**_.
+
 ![Build Status](https://github.com/kachick/hash-diff/actions/workflows/spec.yml/badge.svg?branch=main)
-[![Gem Version](https://badge.fury.io/rb/hash-diff.svg)](http://badge.fury.io/rb/hash-diff)
 
 ## Usage
 
