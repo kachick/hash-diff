@@ -18,11 +18,6 @@ tmp
 # bundler
 vendor/
 
-# YARD artifacts
-.yardoc
-_yardoc
-doc/
-
 # tmp-old
 .old
 

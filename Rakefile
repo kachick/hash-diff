@@ -23,16 +23,6 @@ RSpec::Core::RakeTask.new(:spec) do |rt|
   rt.ruby_opts = %w[-w]
 end
 
-desc 'Signature check, it means `rbs` and `YARD` syntax correctness'
-multitask validate_signatures: [:'signature:validate_yard']
-
-namespace :signature do
-  desc 'Generate YARD docs for the syntax check'
-  task :validate_yard do
-    sh "bundle exec yard --fail-on-warning #{'--no-progress' if ENV['CI']}"
-  end
-end
-
 desc 'Prevent miss packaging!'
 task :view_packaging_files do
   sh 'rm -rf ./pkg'
