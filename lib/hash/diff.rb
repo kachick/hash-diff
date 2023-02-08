@@ -8,7 +8,7 @@ class Hash
     # @param new [Hash]
     # @return [Hash::Diff]
     def Diff(old, new)
-      Diff.new(old: old, new: new)
+      Diff.new(old:, new:)
     end
   end
 
