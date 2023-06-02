@@ -31,3 +31,7 @@ vendor/
 tool/
 .rbx/
 *\#*
+
+# yard
+doc
+.yardoc
